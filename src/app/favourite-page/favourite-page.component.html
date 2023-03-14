@@ -1,0 +1,26 @@
+
+
+
+<div *ngIf="cart && cart.items.length >0" class="container">
+    <ul>
+        <li *ngFor="let cartItem of cart.items">
+            <div>
+                <img [src]="cartItem.food.imageUrl" [alt]="cartItem.food.name">
+            </div>
+            <div>
+                <a routerLink="/food/{{cartItem.food.id}}">
+                    {{cartItem.food.name}}
+                </a>
+            </div>
+
+            <div>
+                <button class="remove-button" (click)="removeFromFavourite(cartItem)">
+                    Remove
+                </button>
+            </div>
+        </li>
+    </ul>
+
+   
+
+</div>
